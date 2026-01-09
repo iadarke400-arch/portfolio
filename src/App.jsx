@@ -1,0 +1,27 @@
+import React from 'react';
+import Header from './components/Header';
+import Home from './sections/Home';
+import Services from './sections/Services';
+import Projects from './sections/Projects';
+import Skills from './sections/Skills';
+import About from './sections/About';
+import Contact from './sections/Contact';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <main>
+        <Home />
+        <Services />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+    </div>
+  );
+}
+
+export default App;

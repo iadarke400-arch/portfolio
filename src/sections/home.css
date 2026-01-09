@@ -1,0 +1,567 @@
+.section.home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    align-items: center;
+    background:
+        radial-gradient(125% 125% at 30% 50%,
+            rgba(255, 247, 247, 0.15) 0%,
+            rgba(0, 0, 0, 0.25) 35%,
+            transparent 100%),
+        #12171C;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Left side - Orbit Animation */
+.home-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.orbit-center-visual {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-ring {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: 4px solid #5C86D4;
+    border-radius: 50%;
+    animation: ring-pulse 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.splash-core {
+    width: 120px;
+    height: 120px;
+    background-color: #5C86D4;
+    border-radius: 64% 36% 27% 73% / 68% 38% 62% 32%;
+    animation: blob-bounce 3s linear infinite;
+    position: relative;
+
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.splash-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.splash-particles span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #5C86D4;
+    border-radius: 50%;
+    opacity: 0;
+    /* Start from center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: particles-explode 3s ease-out infinite;
+}
+
+/* 
+   Randomizing directions and delays for many particles.
+   --tx and --ty are relative translation distances.
+   Range: -150px to 150px approx for good spread.
+*/
+
+/* Particle 1 */
+.splash-particles span:nth-child(1) {
+    --tx: 100px;
+    --ty: -100px;
+    animation-delay: 0s;
+    width: 12px;
+    height: 12px;
+}
+
+/* Particle 2 */
+.splash-particles span:nth-child(2) {
+    --tx: -80px;
+    --ty: -120px;
+    animation-delay: 0.2s;
+    width: 8px;
+    height: 8px;
+}
+
+/* Particle 3 */
+.splash-particles span:nth-child(3) {
+    --tx: 120px;
+    --ty: 50px;
+    animation-delay: 0.4s;
+}
+
+/* Particle 4 */
+.splash-particles span:nth-child(4) {
+    --tx: -100px;
+    --ty: 80px;
+    animation-delay: 0.6s;
+    width: 14px;
+    height: 10px;
+    border-radius: 40%;
+}
+
+/* Particle 5 */
+.splash-particles span:nth-child(5) {
+    --tx: 50px;
+    --ty: -140px;
+    animation-delay: 0.8s;
+}
+
+/* Particle 6 */
+.splash-particles span:nth-child(6) {
+    --tx: -130px;
+    --ty: -40px;
+    animation-delay: 1.0s;
+    width: 6px;
+    height: 6px;
+}
+
+/* Particle 7 */
+.splash-particles span:nth-child(7) {
+    --tx: 90px;
+    --ty: 110px;
+    animation-delay: 1.2s;
+}
+
+/* Particle 8 */
+.splash-particles span:nth-child(8) {
+    --tx: -60px;
+    --ty: 130px;
+    animation-delay: 1.4s;
+    width: 10px;
+    height: 14px;
+    border-radius: 30%;
+}
+
+/* Particle 9 */
+.splash-particles span:nth-child(9) {
+    --tx: 0px;
+    --ty: -160px;
+    animation-delay: 0.1s;
+}
+
+/* Particle 10 */
+.splash-particles span:nth-child(10) {
+    --tx: 150px;
+    --ty: 0px;
+    animation-delay: 0.3s;
+}
+
+/* Particle 11 */
+.splash-particles span:nth-child(11) {
+    --tx: -150px;
+    --ty: 20px;
+    animation-delay: 0.5s;
+    width: 9px;
+    height: 9px;
+}
+
+/* Particle 12 */
+.splash-particles span:nth-child(12) {
+    --tx: 40px;
+    --ty: 150px;
+    animation-delay: 0.7s;
+}
+
+/* Particle 13 */
+.splash-particles span:nth-child(13) {
+    --tx: -110px;
+    --ty: -90px;
+    animation-delay: 0.9s;
+}
+
+/* Particle 14 */
+.splash-particles span:nth-child(14) {
+    --tx: 130px;
+    --ty: -60px;
+    animation-delay: 1.1s;
+    width: 15px;
+    height: 15px;
+}
+
+/* Particle 15 */
+.splash-particles span:nth-child(15) {
+    --tx: -40px;
+    --ty: -150px;
+    animation-delay: 1.3s;
+}
+
+/* Particle 16 */
+.splash-particles span:nth-child(16) {
+    --tx: 80px;
+    --ty: 80px;
+    animation-delay: 1.5s;
+}
+
+/* Particle 17 */
+.splash-particles span:nth-child(17) {
+    --tx: -90px;
+    --ty: 100px;
+    animation-delay: 1.7s;
+    width: 7px;
+    height: 7px;
+}
+
+/* Particle 18 */
+.splash-particles span:nth-child(18) {
+    --tx: 140px;
+    --ty: -30px;
+    animation-delay: 1.9s;
+}
+
+/* Particle 19 */
+.splash-particles span:nth-child(19) {
+    --tx: -140px;
+    --ty: 50px;
+    animation-delay: 2.1s;
+}
+
+/* Particle 20 */
+.splash-particles span:nth-child(20) {
+    --tx: 20px;
+    --ty: 160px;
+    animation-delay: 2.3s;
+    width: 11px;
+    height: 11px;
+}
+
+/* Particle 21 */
+.splash-particles span:nth-child(21) {
+    --tx: -20px;
+    --ty: -130px;
+    animation-delay: 0.15s;
+}
+
+/* Particle 22 */
+.splash-particles span:nth-child(22) {
+    --tx: 110px;
+    --ty: 120px;
+    animation-delay: 0.35s;
+}
+
+/* Particle 23 */
+.splash-particles span:nth-child(23) {
+    --tx: -120px;
+    --ty: -110px;
+    animation-delay: 0.55s;
+    width: 13px;
+    height: 13px;
+}
+
+/* Particle 24 */
+.splash-particles span:nth-child(24) {
+    --tx: 70px;
+    --ty: -140px;
+    animation-delay: 0.75s;
+}
+
+/* Particle 25 */
+.splash-particles span:nth-child(25) {
+    --tx: -70px;
+    --ty: 60px;
+    animation-delay: 0.95s;
+}
+
+/* Particle 26 */
+.splash-particles span:nth-child(26) {
+    --tx: 160px;
+    --ty: 40px;
+    animation-delay: 1.15s;
+    width: 5px;
+    height: 5px;
+}
+
+/* Particle 27 */
+.splash-particles span:nth-child(27) {
+    --tx: -160px;
+    --ty: -20px;
+    animation-delay: 1.35s;
+}
+
+/* Particle 28 */
+.splash-particles span:nth-child(28) {
+    --tx: 30px;
+    --ty: 140px;
+    animation-delay: 1.55s;
+}
+
+/* Particle 29 */
+.splash-particles span:nth-child(29) {
+    --tx: -30px;
+    --ty: -150px;
+    animation-delay: 1.75s;
+}
+
+/* Particle 30 */
+.splash-particles span:nth-child(30) {
+    --tx: 100px;
+    --ty: 100px;
+    animation-delay: 1.95s;
+    width: 12px;
+    height: 8px;
+    border-radius: 40%;
+}
+
+/* Particle 31 */
+.splash-particles span:nth-child(31) {
+    --tx: -100px;
+    --ty: -100px;
+    animation-delay: 0.25s;
+}
+
+/* Particle 32 */
+.splash-particles span:nth-child(32) {
+    --tx: 0px;
+    --ty: 170px;
+    animation-delay: 0.45s;
+}
+
+
+@keyframes ring-pulse {
+    0% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(92, 134, 212, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 20px rgba(92, 134, 212, 0);
+    }
+
+    100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(92, 134, 212, 0);
+    }
+}
+
+@keyframes blob-bounce {
+
+    0%,
+    100% {
+        border-radius: 64% 36% 27% 73% / 68% 38% 62% 32%;
+        transform: rotate(0deg);
+    }
+
+    33% {
+        border-radius: 36% 64% 73% 27% / 32% 68% 32% 62%;
+        transform: rotate(120deg);
+    }
+
+    66% {
+        border-radius: 73% 27% 36% 64% / 62% 32% 68% 38%;
+        transform: rotate(240deg);
+    }
+}
+
+@keyframes particles-explode {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        /* Move to random (tx, ty) from center */
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0);
+        opacity: 0;
+    }
+}
+
+.orbit-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    animation: rotate 20s linear infinite;
+}
+
+.orbit-item {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important;
+    animation: counter-rotate 20s linear infinite;
+}
+
+.orbit-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    /* Base animation, customized per item below */
+    animation: pulse-size 4s ease-in-out infinite;
+}
+
+/* Varying sizes/animations for each item */
+.item-1 img {
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
+
+.item-2 img {
+    animation-duration: 4.5s;
+    animation-delay: 1s;
+}
+
+.item-3 img {
+    animation-duration: 3.5s;
+    animation-delay: 0.5s;
+}
+
+.item-4 img {
+    animation-duration: 5s;
+    animation-delay: 2s;
+}
+
+.item-5 img {
+    animation-duration: 4s;
+    animation-delay: 1.5s;
+}
+
+.item-6 img {
+    animation-duration: 3.8s;
+    animation-delay: 0.8s;
+}
+
+@keyframes pulse-size {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Positioning items in a circle - 60 degrees apart */
+/* Item 1: 0 degrees (Top center) */
+.item-1 {
+    top: 0%;
+    left: 50%;
+}
+
+/* Item 2: 60 degrees (Top Right) */
+.item-2 {
+    top: 25%;
+    left: 93.3%;
+}
+
+/* Item 3: 120 degrees (Bottom Right) */
+.item-3 {
+    top: 75%;
+    left: 93.3%;
+}
+
+/* Item 4: 180 degrees (Bottom center) */
+.item-4 {
+    top: 100%;
+    left: 50%;
+}
+
+/* Item 5: 240 degrees (Bottom Left) */
+.item-5 {
+    top: 75%;
+    left: 6.7%;
+}
+
+/* Item 6: 300 degrees (Top Left) */
+.item-6 {
+    top: 25%;
+    left: 6.7%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counter-rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* Right side - Typography */
+.home-text {
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 7rem;
+    padding-bottom: 8rem;
+    z-index: 2;
+}
+
+.title-large {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 170px;
+    line-height: 80%;
+    letter-spacing: 0px;
+    background: linear-gradient(90deg, rgba(74, 85, 99, 1) 0%, rgba(45, 55, 72, 1) 18%, rgba(45, 55, 72, 1) 100%);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.subtitle-large {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 30px;
+    background: linear-gradient(90deg, rgba(74, 85, 99, 1) 0%, rgba(45, 55, 72, 1) 18%, rgba(45, 55, 72, 1) 100%);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-left: 10px;
+}
+
+.highlight-blue {
+    color: #222;
+}
+
+.name-plate {
+    margin-top: 5rem;
+    background-color: #333;
+    color: #aaa;
+    padding: 1rem 3rem;
+    border-radius: 50px 0 0 50px;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+}

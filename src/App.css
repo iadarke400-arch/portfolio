@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  /* Using a modern font */
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.App {
+  text-align: center;
+  background-color: #1a1a1a;
+  /* Ensure app container is also dark */
+  min-height: 100vh;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  /* Removed border-bottom */
+}
+
+/* Removed .section:nth-child(even) to prevent light background override */
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+}

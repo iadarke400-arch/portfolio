@@ -1,0 +1,275 @@
+.section.contact {
+    background-color: #0d0d0d;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* Stretch children to full height */
+    /* Force side-by-side layout overriding global .section */
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.contact-sidebar {
+    height: auto;
+    /* Let flex stretch handle the height */
+    width: 100px;
+    background-color: #333;
+    /* Darker grey sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Align icons to bottom */
+    align-items: center;
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    /* Ensure no underline for a tags */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon.whatsapp {
+    background-color: #25D366;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5;
+}
+
+.social-icon.telegram {
+    background-color: #1877f2;
+}
+
+/* Main Content */
+.contact-main {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Override global center alignment */
+}
+
+.contact-title {
+    font-family: 'Stencil', 'Impact', sans-serif;
+    /* Stencil look */
+    font-size: 5rem;
+    color: #e0e0e0;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+}
+
+.contact-content {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Info Column */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #5C86D4;
+    border-radius: 2px;
+}
+
+.info-item h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+/* Form Column */
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+    padding: 2rem;
+}
+
+/* Corner Brackets */
+.corner-tl,
+.corner-tr,
+.corner-bl,
+.corner-br {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-color: #5C86D4;
+    border-style: solid;
+    border-width: 0;
+}
+
+.corner-tl {
+    top: 0;
+    left: 0;
+    border-top-width: 6px;
+    border-left-width: 6px;
+    border-top-left-radius: 20px;
+}
+
+.corner-tr {
+    top: 0;
+    right: 0;
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-top-right-radius: 20px;
+}
+
+.corner-bl {
+    bottom: 0;
+    left: 0;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-bottom-left-radius: 20px;
+}
+
+.corner-br {
+    bottom: 0;
+    right: 0;
+    border-bottom-width: 6px;
+    border-right-width: 6px;
+    border-bottom-right-radius: 20px;
+}
+
+.contact-form {
+    background-color: #1a1a1a;
+    padding: 3rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    gap: 2rem;
+    /* height: 100%; Removed to allow auto height and prevent overflow */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+.form-group input,
+.form-group textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    padding: 0.5rem 0;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #5C86D4;
+}
+
+.send-btn {
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+    }
+
+    .contact-sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    .contact-main {
+        padding: 2rem;
+    }
+
+    .contact-title {
+        font-size: 3rem;
+    }
+
+    .barcode {
+        display: none;
+    }
+}
+
+.status-msg {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.status-msg.success {
+    color: #25D366;
+}
+
+.status-msg.error {
+    color: #dc2743;
+}
