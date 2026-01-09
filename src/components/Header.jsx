@@ -3,6 +3,7 @@ import './Header.css';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -41,21 +42,32 @@ const Header = () => {
           <img src="/images/bluebee_icon.png" alt="Bluebee Logo" className="logo-img" />
         </div>
       </div>
-      <div className="header-right">
+      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <span className={isMenuOpen ? "bar open" : "bar"}></span>
+        <span className={isMenuOpen ? "bar open" : "bar"}></span>
+        <span className={isMenuOpen ? "bar open" : "bar"}></span>
+      </div>
+      <div className={`header-right ${isMenuOpen ? 'open' : ''}`}>
         <nav>
-          <ul className="nav-links">
+          <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
             {['home', 'services', 'skills', 'projects', 'about'].map((item) => (
               <li
                 key={item}
                 className={activeSection === item ? 'active' : ''}
-                onClick={() => scrollToSection(item)}
+                onClick={() => {
+                  scrollToSection(item);
+                  setIsMenuOpen(false);
+                }}
               >
                 {item.toUpperCase()}
               </li>
             ))}
           </ul>
         </nav>
-        <button className="contact-btn" onClick={() => scrollToSection('contact')}>CONTACT</button>
+        <button className="contact-btn" onClick={() => {
+          scrollToSection('contact');
+          setIsMenuOpen(false);
+        }}>CONTACT</button>
       </div>
     </header>
   );

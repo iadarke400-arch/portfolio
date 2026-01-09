@@ -235,23 +235,48 @@
 }
 
 @media (max-width: 768px) {
-    .contact {
+    .section.contact {
         flex-direction: column;
+        display: flex;
     }
 
     .contact-sidebar {
         width: 100%;
         height: auto;
         flex-direction: row;
+        justify-content: center;
+        /* Center icons horizontally */
         padding: 1rem;
+        gap: 2rem;
     }
 
     .contact-main {
-        padding: 2rem;
+        padding: 2rem 1rem;
+        /* Reduce padding */
+    }
+
+    /* Stack content */
+    .contact-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact-info {
+        padding-left: 1rem;
+        /* Less indentation */
+        min-width: auto;
+    }
+
+    .contact-form-wrapper {
+        min-width: auto;
+        width: 100%;
+        padding: 1rem;
     }
 
     .contact-title {
         font-size: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
     }
 
     .barcode {

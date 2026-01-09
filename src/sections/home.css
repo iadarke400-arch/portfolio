@@ -564,4 +564,14 @@
     text-transform: uppercase;
     position: absolute;
     right: 0;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.name-plate:hover {
+    background-color: #5C86D4;
+    color: #fff;
+    box-shadow: -5px 0 25px rgba(92, 134, 212, 0.6);
+    padding-right: 4.5rem;
+    /* Slide/Grow visual effect */
 }
