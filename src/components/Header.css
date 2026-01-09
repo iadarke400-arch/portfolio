@@ -47,11 +47,55 @@
   transition: color 0.3s;
   font-size: 14px;
   text-transform: uppercase;
+  position: relative;
+  /* For pseudo-element absolute positioning */
 }
 
-.header-right .nav-links li:hover,
+/* Animated Underline */
+/* Animated Underline Base */
+.header-right .nav-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  /* Default to white for hover */
+  transition: width 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Hover State (Interactive) */
+.header-right .nav-links li:hover {
+  color: #fff;
+}
+
+.header-right .nav-links li:hover::after {
+  width: 100%;
+  background-color: #fff;
+}
+
+/* Active State (Selected) */
 .header-right .nav-links li.active {
   color: #5C86D4;
+  text-shadow: 0 0 10px rgba(92, 134, 212, 0.4);
+  /* Blue glow */
+}
+
+.header-right .nav-links li.active::after {
+  width: 100%;
+  background-color: #5C86D4;
+  box-shadow: 0 0 10px rgba(92, 134, 212, 0.4);
+  /* Blue glow on line */
+}
+
+/* Ensure Active overrides Hover color if hovering on selected item */
+.header-right .nav-links li.active:hover {
+  color: #5C86D4;
+}
+
+.header-right .nav-links li.active:hover::after {
+  background-color: #5C86D4;
 }
 
 .contact-btn {
@@ -64,6 +108,12 @@
   font-size: 0.8rem;
   cursor: pointer;
   text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 /* Hamburger Menu */
