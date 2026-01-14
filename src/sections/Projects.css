@@ -250,7 +250,7 @@
 
 @media (max-width: 768px) {
     .projects-title {
-        font-size: 40px;
+        font-size: 28px;
         line-height: 1;
         padding-bottom: 60px;
     }
@@ -260,31 +260,47 @@
     }
 
     .pricing-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     /* Carousel Adjustment for Mobile */
     .carousel-container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        gap: 0.5rem;
         width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
     }
 
+    /* Hide prev/next cards on mobile */
     .carousel-card {
-        width: 80%;
-        /* Full width cards */
-        height: auto;
-        min-height: 250px;
-        opacity: 1;
-        /* All visible */
-        transform: scale(1);
-        margin: 1rem 0;
+        display: none;
     }
 
+    /* Only show active card */
     .carousel-card.active {
-        width: 90%;
-        height: auto;
-        min-height: 300px;
-        transform: scale(1.05);
+        display: flex;
+        width: 100%;
+        max-width: 280px;
+        /* Constrain width */
+        height: 300px;
+        /* Fixed height match */
+        min-height: auto;
+        opacity: 1;
+        transform: scale(1);
+        margin: 0;
+        z-index: 10;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Ensure buttons are visible and sized correctly */
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        /* Prevent shrinking */
+        z-index: 11;
     }
 }

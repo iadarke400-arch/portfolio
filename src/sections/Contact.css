@@ -248,11 +248,21 @@
         /* Center icons horizontally */
         padding: 1rem;
         gap: 2rem;
+        order: 2;
+        /* Move to bottom */
+    }
+
+    .social-icons {
+        flex-direction: row;
+        /* Horizontal icons */
+        gap: 2rem;
     }
 
     .contact-main {
         padding: 2rem 1rem;
         /* Reduce padding */
+        order: 1;
+        /* Move to top */
     }
 
     /* Stack content */
